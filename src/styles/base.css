@@ -1,0 +1,117 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 13px; /* Further reduced base font size */
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Improved heading styles for better accessibility */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+  
+  h1 {
+    @apply text-xl sm:text-2xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-lg sm:text-xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-base sm:text-lg leading-snug;
+  }
+  
+  h4 {
+    @apply text-sm sm:text-base leading-snug;
+  }
+  
+  p {
+    @apply leading-normal;
+  }
+  
+  /* Focus styles for better keyboard navigation */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+/* Custom styles for sidebar items */
+.sidebar-item {
+  @apply flex items-center gap-2 px-2 py-1.5 rounded-md text-gray-600 hover:bg-[hsl(var(--sidebar-hover))] transition-colors;
+}
+
+.light-blue .sidebar-item {
+  @apply text-gray-600;
+}
+
+.dark-purple .sidebar-item,
+.dark-charcoal .sidebar-item {
+  @apply text-gray-300;
+}
+
+.sidebar-item.active {
+  @apply bg-[hsl(var(--sidebar-active))] text-primary font-medium;
+}
+
+/* For collapsed sidebar */
+.w-12 .sidebar-item {
+  @apply px-0 justify-center;
+}
+
+/* Stat card styles */
+.stat-card {
+  @apply bg-card p-3.5 rounded-xl border border-border shadow-sm text-card-foreground;
+}
+
+/* Define scrollbar for light and dark themes */
+.light-purple ::-webkit-scrollbar,
+.light-blue ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.light-purple ::-webkit-scrollbar-track,
+.light-blue ::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 3px;
+}
+
+.light-purple ::-webkit-scrollbar-thumb,
+.light-blue ::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 3px;
+}
+
+.dark-purple ::-webkit-scrollbar,
+.dark-charcoal ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.dark-purple ::-webkit-scrollbar-track,
+.dark-charcoal ::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 3px;
+}
+
+.dark-purple ::-webkit-scrollbar-thumb,
+.dark-charcoal ::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 3px;
+}

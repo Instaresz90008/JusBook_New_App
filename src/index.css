@@ -1,0 +1,9 @@
+
+/* Import base styles */
+@import './styles/base.css';
+
+/* Import theme styles */
+@import './styles/themes/light-purple.css';
+@import './styles/themes/light-blue.css';
+@import './styles/themes/dark-purple.css';
+@import './styles/themes/dark-charcoal.css';
